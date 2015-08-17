@@ -1,0 +1,30 @@
+{
+  "name": "express-promise-wrapper",
+  "version": "0.0.1",
+  "description": "Wrapper to use express with promises",
+  "main": "common.js",
+  "repository": "lgvo/express-args-resolver",
+  "keywords": [
+    "express",
+    "promise",
+    "wrapper",
+    "wrap"
+  ],
+  "devDependencies": {
+    "babel": "~5.6.14",
+    "chai": "~3.0.0",
+    "chai-as-promised": "~5.1.0",
+    "karma": "~0.12.37",
+    "mocha": "~2.2.5",
+    "sinon": "~1.15.4"
+  },
+  "scripts": {
+    "build": "babel --modules common express-promise-wrapper.js > common.js",
+    "test": "mocha --compilers js:babel/register express-promise-wrapper.spec.js"
+  },
+  "author": "Luis Oliveira <luisgustavo.vilela@gmail.com> (http://github.com/lgvo)",
+  "license": "MIT",
+  "dependencies": {
+    "express-args-resolver": "0.0.1"
+  }
+}
