@@ -81,8 +81,8 @@ class CreatedResponse {
     }
 
     write(res) {
-        res.location(location);
-        res.send(id, 201);
+        res.location(this.location);
+        res.send(this.id, 201);
     }
 }
 
