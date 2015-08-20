@@ -19,22 +19,24 @@
 // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import {getResolvers} from 'express-args-resolver';
+import * as args from 'express-args-resolver';
 
 function nullInstance() {
     return null;
 }
 
+export const argsResolver = args;
+
 export function wrap(fn, instanceBuild, resolvers) {
     return function(req, res, next) {
         fn.apply(
             (instanceBuild || nullInstance)(), 
-            (resolvers || getResolvers(fn)).map(function(r) {
+            (resolvers || args.getResolvers(fn)).map(function(r) {
                 return r(req, res, next);
             })
         ).then(function(result) {
             if (!result) {
-                res.sendStatus(204);
+                res.status(204).end();
             } else {
                 result.write(res);
             }
@@ -81,8 +83,17 @@ class CreatedResponse {
     }
 
     write(res) {
-        res.location(this.location);
-        res.send(this.id, 201);
+        if (this.location) {
+            res.location(this.location);
+        }
+
+        res.status(201);
+
+        if (this.id) {
+            res.send(this.id);
+        } else {
+            res.end();
+        }
     }
 }
 

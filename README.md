@@ -29,7 +29,7 @@ express.use(withPromise.wrap(promised));
 
 ```
 
-This will create a wrap function that calls next if catch a error and use objects returns to write to the response. 
+This will create a wrap function that calls "next" callback if catch a error and use objects returns to write to the response. 
 
 ### The return object
 
@@ -66,8 +66,18 @@ res.send(id, 201);
 
 ```
 
+## See Also
+* [restful-express](https://github.com/lgvo/restful-express) declarative way to define Express routers using decorators.
+* [di-decorators](https://github.com/lgvo/di-decorators) easy to use, little dependency injection framework on top of decorators
+
 ## Dependencies
-[Express Arguments resolver](https://github.com/lgvo/express-args-resolver) used to resolve the arguments names.
+* [Express Arguments resolver](https://github.com/lgvo/express-args-resolver) used to resolve the arguments names.
+
+## Contributing
+
+* Please take the time to star the project if you like it! "npm star express-promise-wrapper" and also on github [express-promise-wrapper](https://github.com/lgvo/express-promise-wrapper).
+* Feel free to fork, and if you are planning to add more features please open a issue so we can discuss about.
+
 
 ## License
 [MIT](LICENSE)
