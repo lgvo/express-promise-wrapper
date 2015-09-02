@@ -58,6 +58,10 @@ function promise(id) {
 The project comes with helpers to create some of this objects:
 
 ```javascript 
+var json = withPromise.json,
+    jsonCollection = withPromise.jsonCollection,
+    created = withPromise.created;
+
 json(obj);
 // equivalent
 res.json(obj);

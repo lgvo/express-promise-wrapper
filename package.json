@@ -1,6 +1,6 @@
 {
   "name": "express-promise-wrapper",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Wrapper to use express with promises",
   "main": "common.js",
   "repository": "lgvo/express-promise-wrapper",
