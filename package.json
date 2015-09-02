@@ -14,11 +14,18 @@
     "babel": "~5.6.14",
     "chai": "~3.0.0",
     "chai-as-promised": "~5.1.0",
+    "coveralls": "^2.11.4",
+    "jscoverage": "^0.6.0",
     "mocha": "~2.2.5",
+    "mocha-lcov-reporter": "0.0.2",
     "sinon": "~1.15.4"
   },
   "scripts": {
     "build": "babel --modules common express-promise-wrapper.js > common.js",
+    "clean-coverage": "mkdir -p coverage && rm -Rf coverage/*",
+    "build-coverage": "npm run clean-coverage && node_modules/.bin/babel express-promise-wrapper.js >> coverage/express-promise-wrapper.js && node_modules/.bin/babel express-promise-wrapper.spec.js >> coverage/express-promise-wrapper.spec.js &&  node_modules/.bin/jscoverage coverage/express-promise-wrapper.js coverage/express-promise-wrapper.js",
+    "coverage": "npm run build-coverage && node_modules/.bin/mocha -R html-cov coverage/express-promise-wrapper.spec.js >> coverage/index.html",
+    "coveralls": "npm run build-coverage && node_modules/.bin/mocha -R mocha-lcov-reporter coverage/express-promise-wrapper.spec.js | node_modules/.bin/coveralls",
     "test": "mocha --compilers js:babel/register express-promise-wrapper.spec.js"
   },
   "author": "Luis Oliveira <luisgustavo.vilela@gmail.com> (http://github.com/lgvo)",

@@ -1,5 +1,12 @@
 # Express Promise Wrapper
 
+[![Build Status](https://travis-ci.org/lgvo/express-promise-wrapper.svg?branch=master)](https://travis-ci.org/lgvo/express-promise-wrapper)
+[![Coverage Status](https://coveralls.io/repos/lgvo/express-promise-wrapper/badge.svg?branch=master&service=github)](https://coveralls.io/github/lgvo/express-promise-wrapper?branch=master)
+[![npm version](https://badge.fury.io/js/express-promise-wrapper.svg)](http://badge.fury.io/js/express-promise-wrapper)
+[![Code Climate](https://codeclimate.com/github/lgvo/express-promise-wrapper/badges/gpa.svg)](https://codeclimate.com/github/lgvo/express-promise-wrapper)
+[![npm](https://img.shields.io/npm/dm/express-promise-wrapper.svg)](https://www.npmjs.com/package/express-promise-wrapper)
+
+
 A simple wrapper to to transform promise results into express middleware style (req, res, next) functions.
 
 
